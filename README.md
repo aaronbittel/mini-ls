@@ -1,4 +1,4 @@
-# Mini-LS
+# Mini-ls
 
 A mini implementation of the `ls` command inspired by the book *The Rust Book*.
 
