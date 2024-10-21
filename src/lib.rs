@@ -324,22 +324,21 @@ mod tests {
 
     #[test]
     fn file_mode_777() {
-        let mode: u32 = 40777;
+        let mode: u32 = 33279;
         let mode = get_mode(&FileType::File, mode);
         assert_eq!("-rwxrwxrwx".to_string(), mode)
     }
 
     #[test]
     fn file_mode_465() {
-        let mode: u32 = 40465;
+        let mode: u32 = 33077;
         let mode = get_mode(&FileType::File, mode);
-        println!("hellp? {mode}");
-        assert_eq!("-r--rw-r-x0".to_string(), mode)
+        assert_eq!("-r--rw-r-x".to_string(), mode)
     }
 
     #[test]
     fn file_mode_000() {
-        let mode: u32 = 40000;
+        let mode: u32 = 32768;
         let mode = get_mode(&FileType::File, mode);
         assert_eq!("----------".to_string(), mode)
     }
